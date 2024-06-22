@@ -1,0 +1,69 @@
+import tkinter as tk
+from tkinter import messagebox
+
+# Create the main window
+root = tk.Tk()
+root.title("Tkinter Example")
+root.geometry("400x400")
+
+# Function to be called when the button is clicked
+def on_button_click():
+    name = name_entry.get()
+    age = age_entry.get()
+    gender = gender_var.get()
+    selected_hobbies = [hobby for hobby, var in hobby_vars.items() if var.get() == 1]
+    selected_country = country_var.get()
+    
+    message = f"Hello, {name}!\nYou are {age} years old.\nGender: {gender}\nHobbies: {', '.join(selected_hobbies)}\nCountry: {selected_country}"
+    messagebox.showinfo("Information", message)
+
+# Create a frame for the form
+form_frame = tk.Frame(root, padx=10, pady=10)
+form_frame.pack(pady=20)
+
+# Create a label and entry for the name
+name_label = tk.Label(form_frame, text="Name:")
+name_label.grid(row=0, column=0, sticky='e')
+name_entry = tk.Entry(form_frame)
+name_entry.grid(row=0, column=1)
+
+# Create a label and entry for the age
+age_label = tk.Label(form_frame, text="Age:")
+age_label.grid(row=1, column=0, sticky='e')
+age_entry = tk.Entry(form_frame)
+age_entry.grid(row=1, column=1)
+
+# Create radio buttons for gender selection
+gender_label = tk.Label(form_frame, text="Gender:")
+gender_label.grid(row=2, column=0, sticky='e')
+gender_var = tk.StringVar(value="Male")
+male_radio = tk.Radiobutton(form_frame, text="Male", variable=gender_var, value="Male")
+male_radio.grid(row=2, column=1, sticky='w')
+female_radio = tk.Radiobutton(form_frame, text="Female", variable=gender_var, value="Female")
+female_radio.grid(row=2, column=1, sticky='e')
+
+# Create checkboxes for hobbies selection
+hobby_label = tk.Label(form_frame, text="Hobbies:")
+hobby_label.grid(row=3, column=0, sticky='ne')
+hobbies_frame = tk.Frame(form_frame)
+hobbies_frame.grid(row=3, column=1, sticky='w')
+hobbies = ["Reading", "Traveling", "Cooking", "Sports"]
+hobby_vars = {hobby: tk.IntVar() for hobby in hobbies}
+
+for i, hobby in enumerate(hobbies):
+    chk = tk.Checkbutton(hobbies_frame, text=hobby, variable=hobby_vars[hobby])
+    chk.grid(row=i, column=0, sticky='w')
+
+# Create a dropdown menu for country selection
+country_label = tk.Label(form_frame, text="Country:")
+country_label.grid(row=4, column=0, sticky='e')
+country_var = tk.StringVar(value="Select a country")
+country_dropdown = tk.OptionMenu(form_frame, country_var, "USA", "Canada", "UK", "Australia")
+country_dropdown.grid(row=4, column=1, sticky='w')
+
+# Create a button
+submit_button = tk.Button(root, text="Submit", command=on_button_click)
+submit_button.pack(pady=20)
+
+# Run the application
+root.mainloop()
