@@ -1,0 +1,70 @@
+แบบฝึกหัด
+แบบฝึกหัดที่ 1: คำนวณเวลาที่ใช้ในการทำงาน
+คำสั่ง: ให้เขียนฟังก์ชันที่วัดเวลาที่ใช้ในการทำงานบางอย่าง (เช่น การหน่วงเวลา 2 วินาที) และพิมพ์เวลาที่ใช้ทั้งหมด
+=========================================================
+import time
+
+def measure_time():
+    start_time = time.perf_counter()
+    # ทำงานบางอย่าง
+    time.sleep(2)
+    end_time = time.perf_counter()
+    elapsed_time = end_time - start_time
+    print(f"Elapsed time: {elapsed_time:.2f} seconds")
+
+measure_time()
+=========================================================
+แบบฝึกหัดที่ 2: แปลงสตริงเป็นวันที่และเวลา
+คำสั่ง: ให้เขียนฟังก์ชันที่รับสตริงที่มีรูปแบบวันที่และเวลาจากผู้ใช้ และแปลงสตริงนั้นเป็นวัตถุ datetime
+=========================================================
+from datetime import datetime
+
+def string_to_datetime(date_string):
+    date_object = datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S")
+    return date_object
+
+# ทดสอบฟังก์ชัน
+date_str = "2024-06-30 12:34:56"
+print(string_to_datetime(date_str))
+=========================================================
+แบบฝึกหัดที่ 3: คำนวณความแตกต่างระหว่างสองช่วงเวลา
+คำสั่ง: ให้เขียนฟังก์ชันที่รับวันที่สองวัน และคำนวณจำนวนวันที่ต่างกันระหว่างสองวันนั้น
+=========================================================
+from datetime import datetime
+
+def days_between(date1, date2):
+    date_object1 = datetime.strptime(date1, "%Y-%m-%d")
+    date_object2 = datetime.strptime(date2, "%Y-%m-%d")
+    difference = date_object2 - date_object1
+    return difference.days
+
+# ทดสอบฟังก์ชัน
+date1 = "2024-06-30"
+date2 = "2024-07-10"
+print(days_between(date1, date2))
+=========================================================
+แบบฝึกหัดที่ 4: หยุดการทำงานชั่วคราว
+คำสั่ง: ให้เขียนฟังก์ชันที่รับจำนวนวินาทีจากผู้ใช้ และหยุดการทำงานของโปรแกรมตามจำนวนวินาทีนั้น
+=========================================================
+import time
+
+def pause_program(seconds):
+    print(f"Pausing for {seconds} seconds...")
+    time.sleep(seconds)
+    print("Resuming program.")
+
+# ทดสอบฟังก์ชัน
+pause_program(3)
+=========================================================
+แบบฝึกหัดที่ 5: รับวันที่และเวลาปัจจุบันและแสดงในรูปแบบที่อ่านง่าย
+คำสั่ง: ให้เขียนฟังก์ชันที่รับวันที่และเวลาปัจจุบัน และแสดงในรูปแบบที่อ่านง่าย
+=========================================================
+from datetime import datetime
+
+def current_time_formatted():
+    now = datetime.now()
+    formatted_string = now.strftime("%A, %B %d, %Y %I:%M %p")
+    return formatted_string
+
+# ทดสอบฟังก์ชัน
+print(current_time_formatted())
