@@ -1,0 +1,103 @@
+การจัดการเวลา (Time Handling)
+โมดูล time
+time.time(): ใช้ในการหาค่าเวลาปัจจุบันในหน่วยวินาทีจาก epoch (1970-01-01 00:00:00 UTC)
+=====================================================
+import time
+
+current_time = time.time()
+print("Current time (seconds since epoch):", current_time)
+time.sleep(seconds): ใช้ในการหยุดการทำงานของโปรแกรมชั่วคราวตามจำนวนวินาทีที่กำหนด
+
+=====================================================
+import time
+
+print("Wait for 2 seconds...")
+time.sleep(2)
+print("Done!")
+time.ctime(seconds): ใช้ในการแปลงเวลาจากวินาทีตั้งแต่ epoch ให้เป็นสตริงที่อ่านง่าย
+
+=====================================================
+import time
+
+current_time = time.time()
+readable_time = time.ctime(current_time)
+print("Current time:", readable_time)
+โมดูล datetime
+datetime.datetime.now(): ใช้ในการรับวันที่และเวลาปัจจุบัน
+
+=====================================================
+from datetime import datetime
+
+current_time = datetime.now()
+print("Current time:", current_time)
+datetime.datetime.strptime(date_string, format): ใช้ในการแปลงสตริงเป็นวัตถุ datetime
+
+=====================================================
+from datetime import datetime
+
+date_string = "2024-06-30 12:34:56"
+date_object = datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S")
+print("Date object:", date_object)
+datetime.datetime.strftime(format): ใช้ในการแปลงวัตถุ datetime เป็นสตริงตามรูปแบบที่กำหนด
+
+=====================================================
+from datetime import datetime
+
+now = datetime.now()
+formatted_string = now.strftime("%A, %B %d, %Y %I:%M %p")
+print("Formatted string:", formatted_string)
+datetime.timedelta: ใช้ในการคำนวณช่วงเวลาระหว่างวันที่และเวลา
+
+=====================================================
+from datetime import datetime, timedelta
+
+now = datetime.now()
+one_week_later = now + timedelta(weeks=1)
+print("One week later:", one_week_later)
+
+difference = one_week_later - now
+print("Difference in days:", difference.days)
+=====================================================
+ตัวอย่างการใช้งาน
+ตัวอย่างการคำนวณเวลาที่ใช้ในการทำงาน
+=====================================================
+
+import time
+
+def long_running_task():
+    print("Task started")
+    time.sleep(3)  # หน่วงเวลา 3 วินาทีเพื่อจำลองการทำงานที่ใช้เวลานาน
+    print("Task finished")
+
+start_time = time.perf_counter()
+long_running_task()
+end_time = time.perf_counter()
+
+elapsed_time = end_time - start_time
+print(f"Elapsed time: {elapsed_time:.2f} seconds")
+=====================================================
+ตัวอย่างการจัดการวันที่และเวลา
+=====================================================
+from datetime import datetime, timedelta
+
+# รับวันที่และเวลาปัจจุบัน
+now = datetime.now()
+print("Current time:", now)
+
+# เพิ่มหนึ่งสัปดาห์ให้กับเวลาปัจจุบัน
+one_week_later = now + timedelta(weeks=1)
+print("One week later:", one_week_later)
+
+# แปลงวันที่และเวลาเป็นสตริง
+formatted_string = now.strftime("%A, %B %d, %Y %I:%M %p")
+print("Formatted string:", formatted_string)
+
+# แปลงสตริงเป็นวันที่และเวลา
+date_string = "2024-06-30 12:34:56"
+date_object = datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S")
+print("Date object:", date_object)
+
+# คำนวณความแตกต่างระหว่างสองช่วงเวลา
+difference = one_week_later - now
+print("Difference in days:", difference.days)
+=====================================================
