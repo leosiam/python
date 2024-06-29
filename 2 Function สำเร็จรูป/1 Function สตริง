@@ -1,0 +1,111 @@
+ฟังก์ชันสำเร็จรูปสำหรับจัดการสตริง
+1. การเปลี่ยนแปลงตัวอักษร
+str.upper(): แปลงสตริงเป็นตัวพิมพ์ใหญ่ทั้งหมด
+
+
+text = "hello world"
+print(text.upper())  # Output: "HELLO WORLD"
+str.lower(): แปลงสตริงเป็นตัวพิมพ์เล็กทั้งหมด
+
+
+text = "HELLO WORLD"
+print(text.lower())  # Output: "hello world"
+str.capitalize(): แปลงตัวอักษรตัวแรกของสตริงเป็นตัวพิมพ์ใหญ่
+
+
+text = "hello world"
+print(text.capitalize())  # Output: "Hello world"
+str.title(): แปลงตัวอักษรตัวแรกของแต่ละคำในสตริงเป็นตัวพิมพ์ใหญ่
+
+
+text = "hello world"
+print(text.title())  # Output: "Hello World"
+
+2. การจัดรูปแบบสตริง
+str.strip(): ลบช่องว่างที่อยู่รอบๆ สตริง
+
+text = "  hello world  "
+print(text.strip())  # Output: "hello world"
+str.lstrip() และ str.rstrip(): ลบช่องว่างที่อยู่ด้านซ้ายและขวาของสตริง
+
+text = "  hello world  "
+print(text.lstrip())  # Output: "hello world  "
+print(text.rstrip())  # Output: "  hello world"
+str.center(width): จัดกึ่งกลางสตริงด้วยความกว้างที่กำหนด
+
+text = "hello"
+print(text.center(11))  # Output: "   hello   "
+str.ljust(width) และ str.rjust(width): จัดสตริงให้ชิดซ้ายและขวาด้วยความกว้างที่กำหนด
+
+text = "hello"
+print(text.ljust(10))  # Output: "hello     "
+print(text.rjust(10))  # Output: "     hello"
+
+3. การค้นหาและแทนที่
+str.find(sub) และ str.rfind(sub): ค้นหาตำแหน่งของคำย่อยในสตริง (ครั้งแรกและครั้งสุดท้าย)
+
+text = "hello world"
+print(text.find("o"))  # Output: 4
+print(text.rfind("o"))  # Output: 7
+str.replace(old, new): แทนที่คำย่อยในสตริงด้วยคำใหม่
+
+text = "hello world"
+print(text.replace("world", "Python"))  # Output: "hello Python"
+
+4. การแบ่งและรวมสตริง
+str.split(sep): แบ่งสตริงเป็นลิสต์ตามตัวแบ่งที่กำหนด
+
+text = "hello world"
+print(text.split())  # Output: ["hello", "world"]
+str.join(iterable): รวมลิสต์ของสตริงเป็นสตริงเดียวด้วยตัวเชื่อมที่กำหนด
+
+words = ["hello", "world"]
+print(" ".join(words))  # Output: "hello world"
+5. การตรวจสอบสตริง
+str.startswith(prefix) และ str.endswith(suffix): ตรวจสอบว่าสตริงเริ่มต้นหรือสิ้นสุดด้วยคำที่กำหนด
+
+text = "hello world"
+print(text.startswith("hello"))  # Output: True
+print(text.endswith("world"))  # Output: True
+str.isalpha(): ตรวจสอบว่าสตริงประกอบด้วยตัวอักษรทั้งหมด
+
+text = "hello"
+print(text.isalpha())  # Output: True
+str.isdigit(): ตรวจสอบว่าสตริงประกอบด้วยตัวเลขทั้งหมด
+
+text = "12345"
+print(text.isdigit())  # Output: True
+ตัวอย่างการใช้งาน
+ตัวอย่างการแปลงตัวอักษร
+
+text = "hello world"
+print(text.upper())  # Output: "HELLO WORLD"
+print(text.lower())  # Output: "hello world"
+print(text.capitalize())  # Output: "Hello world"
+print(text.title())  # Output: "Hello World"
+
+ตัวอย่างการจัดรูปแบบสตริง
+text = "  hello world  "
+print(text.strip())  # Output: "hello world"
+print(text.center(20))  # Output: "    hello world     "
+
+ตัวอย่างการค้นหาและแทนที่
+text = "hello world"
+print(text.find("o"))  # Output: 4
+print(text.replace("world", "Python"))  # Output: "hello Python"
+
+ตัวอย่างการแบ่งและรวมสตริง
+text = "hello world"
+words = text.split()
+print(words)  # Output: ["hello", "world"]
+print(" ".join(words))  # Output: "hello world"
+
+ตัวอย่างการตรวจสอบสตริง
+text = "hello"
+print(text.isalpha())  # Output: True
+print(text.isdigit())  # Output: False
+
+สรุป
+การจัดการสตริงใน Python สามารถทำได้ง่ายดายด้วยฟังก์ชันสำเร็จรูปที่มีอยู่ในภาษา ฟังก์ชันเหล่านี้ช่วยให้การแปลง, จัดรูปแบบ, ค้นหา, แทนที่, แบ่ง, รวม, และตรวจสอบสตริงเป็นไปได้อย่างรวดเร็วและสะดวก.
+
+
