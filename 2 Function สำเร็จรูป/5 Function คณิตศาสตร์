@@ -1,0 +1,79 @@
+ฟังก์ชันทางคณิตศาสตร์พื้นฐานใน Python
+1. ฟังก์ชันพื้นฐาน
+abs(x): คืนค่าค่าสัมบูรณ์ของ x
+=====================================================
+print(abs(-5))  # Output: 5
+round(x, n): คืนค่าของ x โดยปัดเศษไปที่ตำแหน่งทศนิยม n (ถ้าไม่ระบุ n จะปัดเศษเป็นจำนวนเต็ม)
+
+print(round(3.14159, 2))  # Output: 3.14
+print(round(3.5))  # Output: 4
+pow(x, y): คืนค่าของ x ยกกำลัง y
+
+print(pow(2, 3))  # Output: 8
+max(iterable) และ min(iterable): คืนค่ามากที่สุดและน้อยที่สุดใน iterable
+
+print(max(1, 2, 3, 4))  # Output: 4
+print(min(1, 2, 3, 4))  # Output: 1
+sum(iterable): คืนค่าผลรวมของ iterable
+
+print(sum([1, 2, 3, 4]))  # Output: 10
+=====================================================
+2. โมดูล math
+Python ยังมีโมดูล math ที่มีฟังก์ชันทางคณิตศาสตร์เพิ่มเติมอีกมากมาย
+
+math.sqrt(x): คืนค่ารากที่สองของ x
+=====================================================
+import math
+
+print(math.sqrt(16))  # Output: 4.0
+math.factorial(x): คืนค่าฟังก์ชันแฟคทอเรียลของ x
+=====================================================
+import math
+
+print(math.factorial(5))  # Output: 120
+math.exp(x): คืนค่า e ยกกำลัง x
+=====================================================
+import math
+
+print(math.exp(1))  # Output: 2.718281828459045
+math.log(x, base): คืนค่าลอการิทึมของ x ที่ฐาน base (ถ้าไม่ระบุ base จะใช้ฐาน e)
+=====================================================
+import math
+
+print(math.log(8, 2))  # Output: 3.0
+print(math.log(10))  # Output: 2.302585092994046 (ฐาน e)
+math.sin(x), math.cos(x), math.tan(x): คืนค่าฟังก์ชันไซน์, โคไซน์, และแทนเจนต์ของ x (หน่วยเรเดียน)
+=====================================================
+import math
+
+print(math.sin(math.pi / 2))  # Output: 1.0
+print(math.cos(math.pi))  # Output: -1.0
+print(math.tan(math.pi / 4))  # Output: 1.0
+math.degrees(x) และ math.radians(x): แปลงหน่วยเรเดียนเป็นองศา และองศาเป็นเรเดียน
+=====================================================
+import math
+
+print(math.degrees(math.pi))  # Output: 180.0
+print(math.radians(180))  # Output: 3.141592653589793
+=====================================================
+ตัวอย่างการใช้งาน
+ตัวอย่างการคำนวณพื้นฐาน
+=====================================================
+print(abs(-5))  # Output: 5
+print(round(3.14159, 2))  # Output: 3.14
+print(pow(2, 3))  # Output: 8
+print(max(1, 2, 3, 4))  # Output: 4
+print(min(1, 2, 3, 4))  # Output: 1
+print(sum([1, 2, 3, 4]))  # Output: 10
+=====================================================
+ตัวอย่างการใช้โมดูล math
+=====================================================
+import math
+
+print(math.sqrt(16))  # Output: 4.0
+print(math.factorial(5))  # Output: 120
+print(math.exp(1))  # Output: 2.718281828459045
+print(math.log(8, 2))  # Output: 3.0
+print(math.sin(math.pi / 2))  # Output: 1.0
+print(math.degrees(math.pi))  # Output: 180.0
+print(math.radians(180))  # Output: 3.1
