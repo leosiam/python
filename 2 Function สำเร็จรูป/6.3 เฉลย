@@ -34,7 +34,7 @@ def random_choice(words):
 
 # ทดสอบฟังก์ชัน
 words = ['apple', 'banana', 'cherry']
-print(random_choice(words
+print(random_choice(words))
 
 ===========================================================
 แบบฝึกหัดที่ 4: สุ่มสับลิสต์
