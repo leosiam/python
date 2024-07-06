@@ -1,0 +1,19 @@
+1. ใช้กับ List
+
+my_list = [1, 2, 3, 4]
+for item in my_list:
+    print(item)
+    
+2. ใช้กับ Numpy Array
+
+import numpy as np
+my_array = np.array([1, 2, 3, 4])
+for item in my_array:
+    print(item)
+    
+3. ใช้กับ Array จากโมดูล array
+
+from array import array
+my_array = array('i', [1, 2, 3, 4])
+for item in my_array:
+    print(item)
