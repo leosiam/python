@@ -1,0 +1,48 @@
+แบบฝึกหัด
+เขียนข้อความลงไฟล์:
+
+สร้างไฟล์ใหม่ชื่อ greetings.txt และเขียนข้อความ "Hello, how are you today?" ลงไป
+เขียนหลายบรรทัดลงไฟล์:
+
+สร้างไฟล์ชื่อ notes.txt และเขียนข้อความหลายบรรทัดที่มีเนื้อหาต่างกันอย่างน้อยสามบรรทัด
+เพิ่มข้อความในไฟล์ที่มีอยู่:
+
+ให้ notes.txt ที่สร้างจากข้อ 2 มีข้อความเพิ่มเติม "Adding another important note." ที่ต่อท้ายสุด
+สร้างไฟล์โดยใช้โหมด 'x':
+
+พยายามสร้างไฟล์ใหม่ชื่อ unique_file.txt โดยใช้โหมด 'x' และจัดการข้อผิดพลาดหากไฟล์นั้นมีอยู่แล้ว
+เขียนตัวเลขลงไฟล์:
+
+สร้างไฟล์ชื่อ numbers.txt และเขียนตัวเลขจาก 1 ถึง 10 แต่ละตัวบนบรรทัดใหม่
+
+===============================================================================
+เฉลย
+เขียนข้อความลงไฟล์:
+
+
+with open("greetings.txt", "w") as file:
+    file.write("Hello, how are you today?\n")
+เขียนหลายบรรทัดลงไฟล์:
+
+
+with open("notes.txt", "w") as file:
+    file.writelines(["First line\n", "Second line\n", "Third line\n"])
+เพิ่มข้อความในไฟล์ที่มีอยู่:
+
+
+with open("notes.txt", "a") as file:
+    file.write("Adding another important note.\n")
+สร้างไฟล์โดยใช้โหมด 'x':
+
+
+try:
+    with open("unique_file.txt", "x") as file:
+        file.write("This file is created with mode 'x'.\n")
+except FileExistsError:
+    print("File already exists.")
+เขียนตัวเลขลงไฟล์:
+
+
+with open("numbers.txt", "w") as file:
+    for number in range(1, 11):
+        file.write(f"{number}\n")
