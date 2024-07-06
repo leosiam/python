@@ -1,0 +1,51 @@
+แบบฝึกหัด
+การจัดการข้อผิดพลาดในการแปลงข้อมูล
+
+รับข้อมูลจากผู้ใช้และพยายามแปลงเป็นจำนวนเต็ม
+จัดการข้อผิดพลาดในกรณีที่ข้อมูลที่รับไม่สามารถแปลงเป็นจำนวนเต็มได้
+การเข้าถึงข้อมูลในลิสต์
+
+มีลิสต์ของตัวเลข [1, 2, 3, 4, 5]
+รับตำแหน่งจากผู้ใช้และพยายามแสดงค่าในลิสต์ที่ตำแหน่งนั้น
+จัดการข้อผิดพลาดหากตำแหน่งที่ระบุไม่อยู่ในขอบเขตของลิสต์
+การเปิดไฟล์และจัดการข้อผิดพลาด
+
+พยายามเปิดไฟล์ที่ชื่อ "example.txt"
+แสดงข้อความถ้าไฟล์ไม่พบ
+พิมพ์เนื้อหาของไฟล์หากเปิดไฟล์สำเร็จ
+เฉลย
+การจัดการข้อผิดพลาดในการแปลงข้อมูล
+
+
+try:
+    user_input = input("Enter a number: ")
+    number = int(user_input)
+    print("The number is:", number)
+except ValueError:
+    print("That's not a valid integer!")
+การเข้าถึงข้อมูลในลิสต์
+
+
+numbers = [1, 2, 3, 4, 5]
+try:
+    index = int(input("Enter an index: "))
+    print("Value at index:", numbers[index])
+except IndexError:
+    print("Index out of bounds!")
+except ValueError:
+    print("Please enter a valid integer!")
+การเปิดไฟล์และจัดการข้อผิดพลาด
+
+
+try:
+    file = open("example.txt", "r")
+    data = file.read()
+    print(data)
+except FileNotFoundError:
+    print("File not found.")
+else:
+    print("File opened successfully.")
+finally:
+    if 'file' in locals() and not file.closed:
+        file.close()
+        print("File closed.")
