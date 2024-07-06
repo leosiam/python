@@ -1,0 +1,40 @@
+#ใน Python, คำสั่ง try และ except ใช้เพื่อจัดการกับข้อผิดพลาดและข้อยกเว้นที่อาจเกิดขึ้นระหว่างการทำงานของโปรแกรม โดยไม่ให้โปรแกรมหยุดทำงานอย่างไม่คาดคิด เมื่อโค้ดที่อยู่ภายใต้ try block นั้นมีข้อผิดพลาด, การควบคุมการทำงานจะย้ายไปยัง except block ซึ่งเป็นที่ที่คุณจะจัดการกับข้อผิดพลาดนั้น
+
+#รูปแบบของการใช้งาน
+
+try:
+    # โค้ดที่อาจก่อให้เกิดข้อผิดพลาด
+    result = 10 / 0
+except ZeroDivisionError:
+    # โค้ดที่จะรันเมื่อมีข้อผิดพลาด ZeroDivisionError
+    print("Cannot divide by zero.")
+
+#การจัดการข้อผิดพลาดหลายประเภท
+#คุณสามารถจัดการข้อผิดพลาดหลายประเภทได้ด้วยการใช้หลาย except blocks:
+
+
+try:
+    # อาจเกิดข้อผิดพลาดหลายแบบ
+    my_list = [1, 2, 3]
+    print(my_list[3])  # IndexError จะเกิดขึ้นที่นี่
+except IndexError:
+    print("Index is out of the bounds.")
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+
+#การใช้ else และ finally
+#else: บล็อกนี้จะรันหลังจาก try block ถ้าไม่มีข้อผิดพลาดเกิดขึ้น
+#finally: บล็อกนี้จะรันไม่ว่า try block จะมีข้อผิดพลาดเกิดขึ้นหรือไม่ก็ตาม โดยปกติใช้สำหรับการทำความสะอาดทรัพยากร เช่น การปิดไฟล์หรือการปิดการเชื่อมต่อเครือข่าย
+
+try:
+    print("Trying to open the file...")
+    file = open("somefile.txt", "r")
+    data = file.read()
+except FileNotFoundError:
+    print("File not found.")
+else:
+    print("File was opened and read successfully!")
+finally:
+    print("This will run no matter what.")
+    if 'file' in locals():  # ตรวจสอบว่าตัวแปร 'file' ถูกสร้างขึ้นหรือไม่
+        file.close()
