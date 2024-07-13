@@ -1,0 +1,19 @@
+การสร้างตาราง หลายๆ ตาราง
+1. ตารางสินค้า (Products)
+product_id (INTEGER) - Primary Key และ Autoincrement.
+name (TEXT) - ชื่อสินค้า.
+price (REAL) - ราคาขาย.
+stock (INTEGER) - จำนวนสินค้าในสต็อก.
+
+2. ตารางลูกค้า (Customers)
+customer_id (INTEGER) - Primary Key และ Autoincrement.
+name (TEXT) - ชื่อลูกค้า.
+phone (TEXT) - เบอร์โทรศัพท์.
+email (TEXT) - อีเมล.
+
+3. ตารางการขาย (Sales)
+sale_id (INTEGER) - Primary Key และ Autoincrement.
+product_id (INTEGER) - ID สินค้าที่ขาย (Foreign Key จากตาราง Products).
+customer_id (INTEGER) - ID ลูกค้าที่ซื้อ (Foreign Key จากตาราง Customers).
+quantity (INTEGER) - จำนวนที่ขาย.
+sale_date (TEXT) - วันที่ขาย.
