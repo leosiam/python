@@ -39,4 +39,50 @@ SELECT * FROM Contacts Order by name desc;
 SELECT * FROM Contacts WHERE name Like '%b%' order by name
 
 
+10
+
+ตัวอย่างการใช้ GROUP BY:
+ข้อ 1: นับจำนวนหนังสือตามหมวดหมู่
+
+SELECT category, COUNT(*) AS NumberOfBooks
+FROM Books
+GROUP BY category;
+
+ในตัวอย่างนี้, คำสั่ง GROUP BY จะจัดกลุ่มหนังสือตามหมวดหมู่และนับจำนวนหนังสือในแต่ละหมวดหมู่.
+
+ข้อ 2: คำนวณค่าเฉลี่ยของจำนวนวันที่ยืมหนังสือ
+
+SELECT book_id, AVG(julianday(return_date) - julianday(loan_date)) AS AverageLoanDays
+FROM Loans
+WHERE return_date IS NOT NULL
+GROUP BY book_id;
+
+ในตัวอย่างนี้, จะคำนวณค่าเฉลี่ยของจำนวนวันยืมสำหรับแต่ละหนังสือที่ถูกคืนแล้ว.
+
+ข้อ 3: รวมยอดยืมของผู้ใช้
+
+SELECT user_id, COUNT(*) AS TotalLoans
+FROM Loans
+GROUP BY user_id;
+
+คำสั่งนี้จะแสดงจำนวนครั้งที่แต่ละผู้ใช้ยืมหนังสือ.
+
+ข้อ 4: หาจำนวนการจองที่เป็นสถานะ 'Active'
+
+SELECT book_id, COUNT(*) AS ActiveReservations
+FROM Reservations
+WHERE status = 'Active'
+GROUP BY book_id;
+
+คำสั่งนี้จะแสดงจำนวนการจองที่ยังใช้งานอยู่สำหรับแต่ละหนังสือ.
+
+ข้อ 5: รวมและแสดงจำนวนหนังสือที่ถูกยืมโดยไม่ได้คืนตามหมวดหมู่
+
+SELECT category, COUNT(*) AS BooksNotReturned
+FROM Books
+JOIN Loans ON Books.book_id = Loans.book_id
+WHERE return_date IS NULL
+GROUP BY category;
+
+
 
