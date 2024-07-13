@@ -1,0 +1,63 @@
+ไปที่เว็บ sqlitebrowser.org  เมนู Download  "DB Browser for SQLite - Standard installer for 64-bit Windows"
+ติดตั้ง และ เปิดโปรแกรม
+
+1. เปิด DB Browser for SQLite
+เปิดโปรแกรม DB Browser for SQLite ที่คุณได้ติดตั้งไว้แล้วบนคอมพิวเตอร์ของคุณ.
+2. สร้างฐานข้อมูลใหม่
+คลิกที่ "New Database" ในหน้าแรกของโปรแกรมหรือจากเมนู File > New Database.
+3. ตั้งชื่อและเลือกที่ตั้งไฟล์
+เมื่อคลิกเลือกสร้างฐานข้อมูลใหม่, หน้าต่างจะปรากฏขึ้นให้คุณตั้งชื่อไฟล์และเลือกที่ตั้งของไฟล์ฐานข้อมูล.
+ใส่ชื่อไฟล์และเลือกที่ตั้งที่คุณต้องการจัดเก็บไฟล์ฐานข้อมูล, แล้วคลิก "Save".
+4. สร้างตารางในฐานข้อมูล
+หลังจากสร้างไฟล์ฐานข้อมูลใหม่แล้ว, คุณต้องสร้างตารางเพื่อเก็บข้อมูล.
+ใน DB Browser, ไปที่เมนู "Create Table" หรือคลิกที่แท็บ "Database Structure" และกดปุ่ม "New Table".
+ใส่ชื่อตารางและเริ่มเพิ่มคอลัมน์โดยการกำหนดชื่อคอลัมน์, ประเภทข้อมูล, และการตั้งค่าอื่นๆ เช่น "Primary Key", "Not Null", หรือ "Unique" ตามความจำเป็น.
+5. บันทึกโครงสร้างตาราง
+หลังจากที่คุณได้กำหนดคอลัมน์และตั้งค่าต่างๆ ครบถ้วนแล้ว, คลิกที่ปุ่ม "OK" หรือ "Apply" เพื่อสร้างตาราง.
+ฐานข้อมูลจะอัพเดทโครงสร้างตารางที่คุณได้สร้างไว้.
+6. ใช้งานฐานข้อมูล
+ตอนนี้คุณมีฐานข้อมูลที่พร้อมใช้งานแล้ว คุณสามารถเริ่มเพิ่มข้อมูล, แก้ไขข้อมูล, หรือทำการสืบค้นข้อมูลผ่าน GUI หรือโดยการใช้คำสั่ง SQL ในแท็บ "Execute SQL".
+
+ตัวอย่าง
+Contacts 
+id (INTEGER) - เป็น Primary Key และ Autoincrement.
+name (TEXT) - ชื่อของผู้ติดต่อ.
+phone_number (TEXT) - เบอร์โทรศัพท์.
+email (TEXT) - อีเมล.
+address (TEXT) - ที่อยู่.
+
+การเพิ่มข้อมูล Browse Data
+
+BEGIN TRANSACTION;
+
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Andrew Wilson', '(853)863-7318x612', 'brian96@yahoo.com', '350 Patrick Throughway, West Maryberg, SD 31210');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Teresa Hicks', '001-166-022-0160x576', 'lisamoore@barber.net', '802 Dean Valley Suite 912, Port Clintonstad, NY 33814');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Kathleen Robinson', '001-910-226-5268', 'justin41@gmail.com', '97802 Gloria Rest Apt. 643, North Timothy, AL 52660');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Meghan Robinson', '+1-791-862-8835x158', 'jmichael@hotmail.com', '75341 Baker Alley, New Hannah, AR 97476');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('James Carey', '981-076-4344', 'williamsphilip@reed.com', 'Unit 8326 Box 0501, DPO AA 59853');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Michelle Downs', '+1-508-257-3529x38778', 'traceywilliams@clements.org', '496 Patel Point Apt. 246, Port Matthewmouth, WI 89595');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Kevin Mcclure', '411-661-1486x3377', 'jameschristensen@mejia.com', '33719 David Fork, Nicoleland, FL 87891');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Melvin Kerr', '001-418-040-7482x094', 'geraldgriffin@hotmail.com', '7955 Elijah Cliffs Apt. 422, Roberthaven, RI 84513');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Mary Lane', '(878)746-9466x38134', 'lisafinley@yahoo.com', '9896 David Camp, Lake Shelly, MO 50268');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Jessica Johnson', '(299)034-2389x68724', 'collierjessica@hotmail.com', '29051 Baker Wall Apt. 786, Port Kaylee, HI 54048');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Gabriel Cooper', '(001)399-8318x875', 'murraymichael@taylor.com', '9636 David Mall Suite 164, West Heatherchester, MN 16510');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Mary Smith', '850-238-5762x2335', 'jessicawilson@yahoo.com', '82695 Davis Burgs, Kristenville, OH 54067');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Jonathan Sims', '930-216-5475', 'andrewgarcia@allen.com', '57254 Stephanie Trafficway, New Jerry, TN 88152');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Amanda Ortega', '651.259.7161x202', 'deborah26@gmail.com', '28304 Mcdonald Isle, East Stephen, TX 57416');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Heather Mckinney', '259-675-9934', 'qaustin@foster-schultz.info', '2502 Peters Camp Apt. 946, Williamsstad, NC 52126');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Tony Russo', '001-699-167-6395x0673', 'allenricardo@gmail.com', '9045 Jamie Trail Apt. 693, Meghanshire, OR 48673');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Christopher Daniels', '675-839-1933x76054', 'tamara39@yahoo.com', '166 Rodgers Neck Apt. 362, Dawntown, NC 60584');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Alyssa Rose', '001-140-368-4047x52186', 'calvin93@taylor-smith.com', '2095 Tucker Streets Suite 258, South Susan, NV 66594');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Michael Patel', '(314)563-4333x58837', 'andrewchen@skinner.com', '62962 Andrews Field Suite 131, Ricechester, TN 76114');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Caitlin Thomas', '+1-710-846-9060', 'stacyrobinson@roberts-charles.com', '8100 Colon Rue Suite 686, New Sarah, MO 27063');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Todd Jacobs', '(208)162-1367x37965', 'chavezsue@gmail.com', 'Unit 8746 Box 2557, DPO AA 00790');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Jason Quinn', '164-228-2703', 'garciarebecca@williams.com', '1807 Gomez Plain, Leeland, SC 38209');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Adam Olson', '679.228.7905', 'deanna47@hotmail.com', '38593 Bailey Branch Apt. 321, Stephanieview, SC 42903');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Justin Melton', '(202)198-8922x6697', 'christopher99@hotmail.com', '1668 Christopher Glen Suite 533, Ruthbury, IA 95178');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Michele Daniel', '865.915.1157x4731', 'cisnerosandrea@yu-donovan.info', '140 Mark Valley Suite 843, Lopezburgh, AR 47764');
+INSERT INTO Contacts (name, phone_number, email, address) VALUES ('Jerry Schmidt', '259-626-4477', 'lisacastillo@miller.org', '9342 Jackson Harbors Suite 794, Nicholasburgh, UT 51063');
+
+COMMIT;
+
+
+
