@@ -1,0 +1,42 @@
+1. ค้นหา  SELECT x FROM x 
+SELECT * FROM Contacts ;
+
+2. ค้นหา  SELECT x FROM x  Where  x = y
+SELECT * FROM Contacts WHERE name = 'Andrew Wilson';
+
+3. หรือ OR
+SELECT * FROM Contacts WHERE name = 'Andrew Wilson' OR name = 'Teresa Hicks' ;
+
+4. และ And
+SELECT * FROM Contacts WHERE id > 10  and id < 15;
+
+5. =, !=, <> , >, < , >= , <=
+6. Between-and ,notbetween-and
+
+SELECT * FROM Contacts WHERE id between 1 and 10
+SELECT * FROM Contacts WHERE id not between 1 and 10
+
+7. in และ not in
+
+SELECT *
+FROM Contacts
+WHERE name IN ('Andrew Wilson', 'Teresa Hicks', 'Kathleen Robinson');
+
+SELECT *
+FROM Contacts
+WHERE name not IN ('Andrew Wilson', 'Teresa Hicks', 'Kathleen Robinson');
+
+8. Like และ Wildcard
+SELECT * FROM Contacts WHERE name Like 'A%';
+SELECT * FROM Contacts WHERE name Like '%A';
+SELECT * FROM Contacts WHERE name Like '%A%';
+
+9. ORDER BY  การเรียงลำดับ
+
+SELECT * FROM Contacts Order by name asc;
+SELECT * FROM Contacts Order by name desc;
+
+SELECT * FROM Contacts WHERE name Like '%b%' order by name
+
+
+
