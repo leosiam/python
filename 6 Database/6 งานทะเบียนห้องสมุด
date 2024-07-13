@@ -1,0 +1,31 @@
+การออกแบบฐานข้อมูลสำหรับงานทะเบียนห้องสมุดต้องคำนึงถึงการจัดการข้อมูลหลายประเภทเช่น ข้อมูลหนังสือ, ผู้ใช้, การยืม-คืนหนังสือ, และอื่นๆ นี่คือโครงสร้างฐานข้อมูลตัวอย่างสำหรับห้องสมุด:
+
+1. ตาราง Books (หนังสือ)
+book_id (INTEGER) - Primary Key, รหัสหนังสือ.
+title (TEXT) - ชื่อหนังสือ.
+author (TEXT) - ชื่อผู้เขียน.
+isbn (TEXT) - International Standard Book Number.
+published_date (DATE) - วันที่พิมพ์.
+category (TEXT) - หมวดหมู่หนังสือ.
+
+2. ตาราง Users (ผู้ใช้)
+user_id (INTEGER) - Primary Key, รหัสผู้ใช้.
+name (TEXT) - ชื่อผู้ใช้.
+address (TEXT) - ที่อยู่.
+phone (TEXT) - เบอร์โทรศัพท์.
+email (TEXT) - อีเมล.
+
+3. ตาราง Loans (การยืมหนังสือ)
+loan_id (INTEGER) - Primary Key, รหัสการยืม.
+user_id (INTEGER) - Foreign Key จากตาราง Users.
+book_id (INTEGER) - Foreign Key จากตาราง Books.
+loan_date (DATE) - วันที่ยืม.
+due_date (DATE) - วันที่กำหนดคืน.
+return_date (DATE) - วันที่จริงในการคืนหนังสือ.
+
+4. ตาราง Reservations (การจองหนังสือ)
+reservation_id (INTEGER) - Primary Key, รหัสการจอง.
+user_id (INTEGER) - Foreign Key จากตาราง Users.
+book_id (INTEGER) - Foreign Key จากตาราง Books.
+reservation_date (DATE) - วันที่จอง.
+status (TEXT) - สถานะการจอง (Active, Fulfilled, Cancelled).
