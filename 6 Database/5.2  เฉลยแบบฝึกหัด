@@ -1,0 +1,44 @@
+แบบฝึกหัด SQL และเฉลย
+ข้อ 1: ลบผู้ติดต่อ
+แบบฝึกหัด: ลบผู้ติดต่อที่มีอีเมลที่ลงท้ายด้วย "@example.com" จากตาราง Contacts.
+
+เฉลย:
+
+DELETE FROM Contacts
+WHERE email LIKE '%@example.com';
+
+ข้อ 2: ลบรายการที่ซ้ำกัน
+แบบฝึกหัด: ลบผู้ติดต่อที่มีชื่อซ้ำกัน โดยเก็บชื่อนั้นไว้เพียงรายการเดียวในตาราง.
+
+เฉลย:
+
+DELETE FROM Contacts
+WHERE rowid NOT IN (
+  SELECT MIN(rowid)
+  FROM Contacts
+  GROUP BY name
+);
+
+ข้อ 3: ลบโดยเงื่อนไขภูมิศาสตร์
+แบบฝึกหัด: ลบผู้ติดต่อที่อาศัยอยู่ในรัฐ "California" (CA).
+
+เฉลย:
+
+DELETE FROM Contacts
+WHERE address LIKE '%CA%';
+
+ข้อ 4: ลบโดยใช้ Subquery
+แบบฝึกหัด: ลบผู้ติดต่อที่ชื่อของพวกเขาไม่ปรากฏในตาราง Orders.
+
+เฉลย:
+
+DELETE FROM Contacts
+WHERE name NOT IN (SELECT customer_name FROM Orders);
+
+ข้อ 5: ลบตามเงื่อนไขเวลา
+แบบฝึกหัด: ลบรายการจากตาราง Events ที่มีวันที่เกิดเหตุเก่ากว่า 1 ปีจากวันปัจจุบัน.
+
+เฉลย:
+
+DELETE FROM Events
+WHERE event_date < DATE('now', '-1 year');
