@@ -1,0 +1,77 @@
+ตัวอย่างคำสั่ง SQL INSERT:
+ข้อ 1: เพิ่มข้อมูลพื้นฐาน
+เพิ่มผู้ติดต่อใหม่โดยระบุชื่อ, เบอร์โทร, อีเมล, และที่อยู่:
+
+INSERT INTO Contacts (name, phone_number, email, address)
+VALUES ('Sarah Connor', '555-0100', 'sarah.connor@example.com', '123 Elm Street');
+
+ข้อ 2: เพิ่มหลายรายการพร้อมกัน
+เพิ่มผู้ติดต่อหลายคนในคำสั่งเดียว:
+
+INSERT INTO Contacts (name, phone_number, email, address)
+VALUES 
+('John Doe', '555-0200', 'john.doe@example.com', '456 Oak Street'),
+('Jane Smith', '555-0300', 'jane.smith@example.com', '789 Pine Street');
+
+ข้อ 3: เพิ่มข้อมูลโดยการเลือกจากตารางอื่น
+ใช้ข้อมูลจากตารางอื่นในการเพิ่มข้อมูล:
+
+INSERT INTO Contacts (name, phone_number, email, address)
+SELECT name, phone, email, address
+FROM Temporary_Contacts
+WHERE city = 'New York';
+
+=====================================================================
+ตัวอย่าง 1: อัปเดตเบอร์โทรศัพท์
+เพื่ออัปเดตหมายเลขโทรศัพท์ของผู้ติดต่อที่ชื่อว่า 'Andrew Wilson':
+
+UPDATE Contacts
+SET phone_number = '999-999-9999'
+WHERE name = 'Andrew Wilson';
+
+ตัวอย่าง 2: อัปเดตหลายฟิลด์
+หากต้องการอัปเดตทั้งอีเมลและที่อยู่สำหรับผู้ติดต่อนั้นๆ:
+
+UPDATE Contacts
+SET email = 'newemail@example.com', address = 'New Address, City, State, Zip'
+WHERE name = 'Teresa Hicks';
+
+ตัวอย่าง 3: ใช้เงื่อนไขสำหรับหลายค่า
+หากต้องการอัปเดตข้อมูลสำหรับหลายบุคคลพร้อมกันที่อยู่ในรายการชื่อที่กำหนด:
+
+UPDATE Contacts
+SET phone_number = '888-888-8888'
+WHERE name IN ('Kathleen Robinson', 'Meghan Robinson');
+
+=========================================================================
+
+ตัวอย่างคำสั่ง SQL DELETE:
+ข้อ 1: ลบข้อมูลพื้นฐาน
+ลบผู้ติดต่อที่ชื่อ 'John Doe':
+
+DELETE FROM Contacts
+WHERE name = 'John Doe';
+
+ข้อ 2: ลบหลายเงื่อนไข
+ลบผู้ติดต่อที่อาศัยอยู่ใน 'New York' และมีอีเมลลงท้ายด้วย 'example.com':
+
+DELETE FROM Contacts
+WHERE address LIKE '%New York%' AND email LIKE '%example.com';
+
+ข้อ 3: ลบข้อมูลโดยไม่มีเงื่อนไข
+คำเตือน: การใช้คำสั่ง DELETE โดยไม่มีเงื่อนไข WHERE จะลบข้อมูลทั้งหมดในตาราง!
+
+DELETE FROM Contacts;
+
+ข้อ 4: ลบโดยใช้ IN
+ลบผู้ติดต่อหลายคนที่ชื่ออยู่ในรายการที่กำหนด:
+
+
+DELETE FROM Contacts
+WHERE name IN ('Alice Johnson', 'Bob Smith', 'Charlie Brown');
+
+ข้อ 5: ลบโดยใช้ Subquery
+ลบผู้ติดต่อที่ชื่อไม่ได้ปรากฏในตารางอีเมลหลัก:
+
+DELETE FROM Contacts
+WHERE name NOT IN (SELECT name FROM PrimaryEmails);
