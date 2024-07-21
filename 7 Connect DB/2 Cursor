@@ -1,0 +1,40 @@
+======================================================================================
+
+import sqlite3
+
+# เชื่อมต่อกับฐานข้อมูล
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+
+# สร้างตาราง
+cursor.execute('''CREATE TABLE IF NOT EXISTS users
+                  (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)''')
+
+# เพิ่มข้อมูล
+cursor.execute('''INSERT INTO users (name, age) VALUES ('Alice', 25)''')
+cursor.execute('''INSERT INTO users (name, age) VALUES ('Bob', 30)''')
+
+# เพิ่มข้อมูลหลายแถว
+users_data = [('Charlie', 22), ('David', 28)]
+cursor.executemany('''INSERT INTO users (name, age) VALUES (?, ?)''', users_data)
+
+# อัปเดตข้อมูล
+cursor.execute('''UPDATE users SET age = 26 WHERE name = 'Alice' ''')
+
+# ค้นหาข้อมูล
+cursor.execute('SELECT * FROM users WHERE age > 25')
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# นับจำนวนแถว
+cursor.execute('SELECT COUNT(*) FROM users')
+count = cursor.fetchone()[0]
+print('Number of users:', count)
+
+# ลบข้อมูล
+cursor.execute('''DELETE FROM users WHERE name = 'Bob' ''')
+
+# บันทึกการเปลี่ยนแปลงและปิดการเชื่อมต่อ
+conn.commit()
+conn.close()
