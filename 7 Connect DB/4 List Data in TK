@@ -28,43 +28,41 @@ conn.close()
 
 ============================================================================
 
+ขั้นตอนการดึงข้อมูลและแสดงใน Tkinter
+
 import sqlite3
 import tkinter as tk
 from tkinter import ttk
 
-# ฟังก์ชันเพื่อดึงข้อมูลจากฐานข้อมูล
+# ฟังก์ชันสำหรับดึงข้อมูลจากฐานข้อมูล
 def fetch_data():
-    conn = sqlite3.connect('example.db')
+    conn = sqlite3.connect('employee.db')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM employees')  # สมมุติว่ามีตาราง employees
+    cursor.execute('SELECT name, position, salary, phone FROM employees')
     rows = cursor.fetchall()
     conn.close()
     return rows
 
-# ฟังก์ชันเพื่อสร้างและแสดงตารางใน Tkinter
-def show_table():
-    root = tk.Tk()
-    root.title("Employee Data")
-
-    tree = ttk.Treeview(root, columns=('name', 'position', 'salary', 'phone'), show='headings')
-    tree.heading('name', text='Name')
-    tree.heading('position', text='Position')
-    tree.heading('salary', text='Salary')
-    tree.heading('phone', text='Phone')
-
-    # ตั้งค่าขนาดคอลัมน์
-    tree.column('name', width=150)
-    tree.column('position', width=150)
-    tree.column('salary', width=100)
-    tree.column('phone', width=100)
-
-    # ดึงข้อมูลจากฐานข้อมูลและเพิ่มในตาราง
+# ฟังก์ชันสำหรับแสดงข้อมูลใน Tkinter Treeview
+def display_data(tree):
     rows = fetch_data()
     for row in rows:
         tree.insert('', tk.END, values=row)
 
-    tree.pack(expand=True, fill=tk.BOTH)
-    root.mainloop()
+# สร้างหน้าต่าง Tkinter
+root = tk.Tk()
+root.title("Employee Information")
 
-# เรียกฟังก์ชันเพื่อแสดงตาราง
-show_table()
+# สร้าง Treeview
+tree = ttk.Treeview(root, columns=('name', 'position', 'salary', 'phone'), show='headings')
+tree.heading('name', text='Name')
+tree.heading('position', text='Position')
+tree.heading('salary', text='Salary')
+tree.heading('phone', text='Phone')
+tree.pack(fill=tk.BOTH, expand=True)
+
+# เรียกใช้ฟังก์ชันแสดงข้อมูล
+display_data(tree)
+
+# เริ่มต้น main loop ของ Tkinter
+root.mainloop()
