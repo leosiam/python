@@ -1,0 +1,70 @@
+# สร้าง emplyee.py
+import sqlite3
+
+# เชื่อมต่อกับฐานข้อมูล (หรือสร้างใหม่ถ้าไม่มี)
+conn = sqlite3.connect('employee.db')
+cursor = conn.cursor()
+
+# สร้างตาราง
+cursor.execute('''CREATE TABLE IF NOT EXISTS employees (
+                    id INTEGER PRIMARY KEY,
+                    name TEXT,
+                    position TEXT,
+                    salary REAL,
+                    phone TEXT
+                  )''')
+
+# เพิ่มข้อมูลตัวอย่าง
+cursor.execute('''INSERT INTO employees (name, position, salary, phone)
+                  VALUES ('John Doe', 'Manager', 50000, '123-456-7890')''')
+cursor.execute('''INSERT INTO employees (name, position, salary, phone)
+                  VALUES ('Jane Smith', 'Developer', 60000, '234-567-8901')''')
+cursor.execute('''INSERT INTO employees (name, position, salary, phone)
+                  VALUES ('Emily Johnson', 'Designer', 45000, '345-678-9012')''')
+
+# บันทึกการเปลี่ยนแปลง
+conn.commit()
+conn.close()
+
+============================================================================
+
+import sqlite3
+import tkinter as tk
+from tkinter import ttk
+
+# ฟังก์ชันเพื่อดึงข้อมูลจากฐานข้อมูล
+def fetch_data():
+    conn = sqlite3.connect('example.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM employees')  # สมมุติว่ามีตาราง employees
+    rows = cursor.fetchall()
+    conn.close()
+    return rows
+
+# ฟังก์ชันเพื่อสร้างและแสดงตารางใน Tkinter
+def show_table():
+    root = tk.Tk()
+    root.title("Employee Data")
+
+    tree = ttk.Treeview(root, columns=('name', 'position', 'salary', 'phone'), show='headings')
+    tree.heading('name', text='Name')
+    tree.heading('position', text='Position')
+    tree.heading('salary', text='Salary')
+    tree.heading('phone', text='Phone')
+
+    # ตั้งค่าขนาดคอลัมน์
+    tree.column('name', width=150)
+    tree.column('position', width=150)
+    tree.column('salary', width=100)
+    tree.column('phone', width=100)
+
+    # ดึงข้อมูลจากฐานข้อมูลและเพิ่มในตาราง
+    rows = fetch_data()
+    for row in rows:
+        tree.insert('', tk.END, values=row)
+
+    tree.pack(expand=True, fill=tk.BOTH)
+    root.mainloop()
+
+# เรียกฟังก์ชันเพื่อแสดงตาราง
+show_table()
