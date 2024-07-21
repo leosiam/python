@@ -1,0 +1,52 @@
+
+#นำเข้าโมดูล sqlite3:
+
+import sqlite3
+
+#เชื่อมต่อกับฐานข้อมูล:
+#หากไฟล์ฐานข้อมูลมีอยู่แล้ว สามารถเชื่อมต่อได้โดยใช้ฟังก์ชัน connect() โดยระบุชื่อไฟล์ฐานข้อมูล:
+
+
+conn = sqlite3.connect('database_name.db')
+
+#หากไฟล์ฐานข้อมูลยังไม่มี จะมีการสร้างไฟล์ฐานข้อมูลใหม่ขึ้นมา:
+
+
+conn = sqlite3.connect('new_database.db')
+
+#สร้างเคอร์เซอร์ (Cursor):
+#เคอร์เซอร์เป็นวัตถุที่ใช้ในการดำเนินการคำสั่ง SQL:
+
+
+cursor = conn.cursor()
+
+#ดำเนินการคำสั่ง SQL:
+#สามารถใช้คำสั่ง SQL เพื่อสร้างตาราง, เพิ่มข้อมูล, แก้ไขข้อมูล, ลบข้อมูล, หรือค้นหาข้อมูล:
+
+
+# ตัวอย่างการสร้างตาราง
+
+cursor.execute('''CREATE TABLE IF NOT EXISTS users
+                  (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)''')
+
+# ตัวอย่างการเพิ่มข้อมูล
+
+cursor.execute('''INSERT INTO users (name, age) VALUES ('John Doe', 30)''')
+
+# ตัวอย่างการค้นหาข้อมูล
+
+cursor.execute('SELECT * FROM users')
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+#บันทึกการเปลี่ยนแปลง (Commit):
+#หากมีการเปลี่ยนแปลงข้อมูลในฐานข้อมูล เช่น การเพิ่ม, แก้ไข, หรือลบข้อมูล จำเป็นต้องบันทึกการเปลี่ยนแปลง:
+
+conn.commit()
+
+#ปิดการเชื่อมต่อ:
+#เมื่อทำงานกับฐานข้อมูลเสร็จเรียบร้อยแล้ว ควรปิดการเชื่อมต่อ:
+
+conn.close()
+
