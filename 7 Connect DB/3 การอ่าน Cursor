@@ -1,0 +1,148 @@
+#1. อ่านข้อมูลทั้งหมดในครั้งเดียว (fetchall())
+#ฟังก์ชัน fetchall() จะคืนค่าทุกแถวของผลลัพธ์ในรูปแบบของลิสต์ของทูเพิล:
+
+
+import sqlite3
+
+# เชื่อมต่อกับฐานข้อมูล
+
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+
+# ค้นหาข้อมูลทั้งหมด
+
+cursor.execute('SELECT * FROM users')
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# ปิดการเชื่อมต่อ
+
+conn.close()
+
+#2. อ่านข้อมูลทีละแถว (fetchone())
+#ฟังก์ชัน fetchone() จะคืนค่าหนึ่งแถวของผลลัพธ์ในรูปแบบของทูเพิลในแต่ละครั้งที่เรียกใช้:
+
+
+import sqlite3
+
+# เชื่อมต่อกับฐานข้อมูล
+
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+
+# ค้นหาข้อมูลทีละแถว
+
+cursor.execute('SELECT * FROM users')
+row = cursor.fetchone()
+while row is not None:
+    print(row)
+    row = cursor.fetchone()
+
+# ปิดการเชื่อมต่อ
+conn.close()
+
+#3. อ่านจำนวนแถวที่ต้องการ (fetchmany(size))
+#ฟังก์ชัน fetchmany(size) จะคืนค่าจำนวนแถวตามที่ระบุใน size:
+
+
+import sqlite3
+
+# เชื่อมต่อกับฐานข้อมูล
+
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+
+# ค้นหาข้อมูลทีละหลายแถว
+
+cursor.execute('SELECT * FROM users')
+rows = cursor.fetchmany(2)  # อ่านข้อมูล 2 แถว
+for row in rows:
+    print(row)
+
+# ปิดการเชื่อมต่อ
+
+conn.close()
+
+#การใช้พารามิเตอร์ในการค้นหา
+#เมื่อทำการค้นหาข้อมูล โดยใช้ตัวแปรในการระบุเงื่อนไขการค้นหา ควรใช้ ? เป็น placeholder เพื่อป้องกัน SQL injection:
+
+import sqlite3
+
+# เชื่อมต่อกับฐานข้อมูล
+
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+
+# ค้นหาข้อมูลตามเงื่อนไข
+
+age = 25
+cursor.execute('SELECT * FROM users WHERE age > ?', (age,))
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# ปิดการเชื่อมต่อ
+
+conn.close()
+
+===========================================================================
+
+#ตัวอย่างการใช้งานทั้งหมด
+
+import sqlite3
+
+# เชื่อมต่อกับฐานข้อมูล
+
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+
+# สร้างตาราง users (ถ้ายังไม่มี)
+
+cursor.execute('''CREATE TABLE IF NOT EXISTS users
+                  (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)''')
+
+# เพิ่มข้อมูลบางส่วน
+
+cursor.execute('''INSERT INTO users (name, age) VALUES ('Alice', 25)''')
+cursor.execute('''INSERT INTO users (name, age) VALUES ('Bob', 30)''')
+cursor.execute('''INSERT INTO users (name, age) VALUES ('Charlie', 22)''')
+conn.commit()  # บันทึกการเปลี่ยนแปลง
+
+# อ่านข้อมูลทั้งหมด
+
+cursor.execute('SELECT * FROM users')
+print("Fetchall:")
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# อ่านข้อมูลทีละแถว
+
+cursor.execute('SELECT * FROM users')
+print("\nFetchone:")
+row = cursor.fetchone()
+while row is not None:
+    print(row)
+    row = cursor.fetchone()
+
+# อ่านข้อมูลทีละหลายแถว
+
+cursor.execute('SELECT * FROM users')
+print("\nFetchmany:")
+rows = cursor.fetchmany(2)  # อ่านข้อมูล 2 แถว
+for row in rows:
+    print(row)
+
+# อ่านข้อมูลตามเงื่อนไข
+
+age = 25
+cursor.execute('SELECT * FROM users WHERE age > ?', (age,))
+print("\nConditional Fetch:")
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+# ปิดการเชื่อมต่อ
+
+conn.close()
