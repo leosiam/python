@@ -1,0 +1,80 @@
+import pygame
+import random
+
+# ตั้งค่าพื้นฐานของเกม
+pygame.init()
+width, height = 500, 500
+win = pygame.display.set_mode((width, height))
+pygame.display.set_caption("Catch the Falling Blocks")
+
+# สี
+white = (255, 255, 255)
+black = (0, 0, 0)
+red = (255, 0, 0)
+
+# ตัวละครผู้เล่น
+player_width = 50
+player_height = 10
+player_x = width // 2 - player_width // 2
+player_y = height - player_height - 10
+player_speed = 5
+
+# บล็อกที่ตกลงมา
+block_width = 50
+block_height = 50
+block_x = random.randint(0, width - block_width)
+block_y = 0
+block_speed = 3
+
+# คะแนน
+score = 0
+
+# ฟังก์ชันในการวาดวัตถุ
+def draw_window():
+    win.fill(white)
+    pygame.draw.rect(win, black, (player_x, player_y, player_width, player_height))
+    pygame.draw.rect(win, red, (block_x, block_y, block_width, block_height))
+
+    # แสดงคะแนน
+    font = pygame.font.SysFont(None, 36)
+    score_text = font.render(f'Score: {score}', True, black)
+    win.blit(score_text, (10, 10))
+
+    pygame.display.update()
+
+# ลูปหลักของเกม
+running = True
+while running:
+    pygame.time.delay(30)  # กำหนดความเร็วของเกม
+
+    # ตรวจสอบการกดปุ่ม
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # การเคลื่อนที่ของผู้เล่น
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and player_x - player_speed > 0:
+        player_x -= player_speed
+    if keys[pygame.K_RIGHT] and player_x + player_speed < width - player_width:
+        player_x += player_speed
+
+    # การเคลื่อนที่ของบล็อก
+    block_y += block_speed
+    if block_y > height:
+        block_y = 0
+        block_x = random.randint(0, width - block_width)
+        score -= 1  # ลดคะแนนเมื่อพลาด
+
+    # ตรวจสอบการชนกันระหว่างผู้เล่นและบล็อก
+    if (player_x < block_x < player_x + player_width or
+    player_x < block_x + block_width < player_x + player_width)
+    and player_y < block_y + block_height < player_y + player_height:
+        block_y = 0
+        block_x = random.randint(0, width - block_width)
+        score += 1  # เพิ่มคะแนนเมื่อเก็บบล็อกได้
+
+    # วาดหน้าจอ
+    draw_window()
+
+pygame.quit()
