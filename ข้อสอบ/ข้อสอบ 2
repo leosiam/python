@@ -1,0 +1,544 @@
+If-Else Questions
+เขียนโปรแกรมที่ตรวจสอบว่าตัวเลขที่ผู้ใช้ใส่เข้ามาเป็นเลขคู่หรือเลขคี่
+เขียนโปรแกรมตรวจสอบว่าตัวเลขที่ป้อนมามากกว่าหรือน้อยกว่า 100
+สร้างโปรแกรมถามอายุ แล้วบอกว่า "เด็ก" หรือ "ผู้ใหญ่" ถ้าอายุต่ำกว่า 18
+สร้างโปรแกรมให้บอกว่าอุณหภูมิที่ป้อนมาเป็น "ร้อน" หรือ "เย็น" (เกิน 30°C คือร้อน)
+ตรวจสอบว่าตัวเลขที่ป้อนมาหารด้วย 5 ลงตัวหรือไม่
+เขียนโปรแกรมถามชื่อ และถ้าชื่อคือ "สมชาย" ให้แสดงข้อความ "สวัสดี สมชาย!"
+ถ้าผู้ใช้ป้อนคะแนน ให้โปรแกรมบอกว่า "ผ่าน" (ถ้าคะแนนมากกว่า 50) หรือ "ไม่ผ่าน"
+เขียนโปรแกรมที่เช็คว่าตัวเลขที่ป้อนมาบวกกันได้ 100 หรือไม่
+ตรวจสอบว่าตัวอักษรที่ป้อนมาเป็นตัวพิมพ์เล็กหรือตัวพิมพ์ใหญ่
+เขียนโปรแกรมที่ตรวจสอบว่าวันนี้เป็นวันหยุดหรือไม่ (วันหยุดคือวันเสาร์หรือวันอาทิตย์)
+For Loop Questions
+สร้างโปรแกรมที่พิมพ์ตัวเลขจาก 1 ถึง 10
+สร้างโปรแกรมที่พิมพ์ตัวเลขคู่ระหว่าง 1 ถึง 20
+พิมพ์ชื่อของคุณซ้ำ 5 ครั้ง
+สร้างโปรแกรมที่พิมพ์ผลรวมของตัวเลขตั้งแต่ 1 ถึง 100
+ใช้ for พิมพ์แม่สูตรคูณของ 7
+สร้างโปรแกรมที่พิมพ์ตัวเลขย้อนหลังจาก 10 ถึง 1
+ใช้ for วาดสามเหลี่ยมจาก * แบบนี้:
+markdown
+Copy code
+*
+**
+***
+****
+เขียนโปรแกรมที่พิมพ์ตัวเลขที่หารด้วย 3 ลงตัวระหว่าง 1 ถึง 30
+ใช้ for วนลูปตัวอักษรในคำว่า "PYTHON"
+พิมพ์ผลรวมของตัวเลขคู่ตั้งแต่ 1 ถึง 50
+While Loop Questions
+สร้างโปรแกรมที่พิมพ์ตัวเลขจาก 1 ถึง 10 โดยใช้ while
+ใช้ while พิมพ์ตัวเลขที่หารด้วย 4 ลงตัวตั้งแต่ 1 ถึง 40
+เขียนโปรแกรมถามอายุผู้ใช้เรื่อยๆ จนกว่าจะป้อนอายุที่มากกว่า 18
+สร้างเกมทายตัวเลข (สุ่มเลข 1-10) โดยให้ผู้ใช้ทายจนกว่าจะถูก
+ใช้ while วาดรูปสามเหลี่ยมกลับหัว:
+markdown
+Copy code
+****
+***
+**
+*
+สร้างโปรแกรมที่พิมพ์เลขคี่ตั้งแต่ 1 ถึง 20 โดยใช้ while
+ใช้ while สร้างเลขอนุกรม 1, 2, 4, 8, 16, ...
+ให้ผู้ใช้ป้อนตัวเลขไปเรื่อยๆ และหยุดเมื่อป้อนเลข 0
+พิมพ์ตัวเลขตั้งแต่ 100 ถึง 90 โดยใช้ while
+ใช้ while คำนวณผลรวมของตัวเลขที่ผู้ใช้ป้อน จนกว่าจะพิมพ์ stop
+If + Loop Combined Questions
+ใช้ for พิมพ์ตัวเลขตั้งแต่ 1 ถึง 50 และบอกว่าตัวเลขไหนเป็นเลขคู่
+สร้างโปรแกรมที่นับจำนวนคำว่า "hello" ในลิสต์ ["hello", "world", "hello", "python"]
+ใช้ while สุ่มเลข 1-100 จนกว่าจะได้เลขที่หารด้วย 5 ลงตัว
+ใช้ for เช็คว่าตัวเลขในลิสต์ [2, 7, 18, 35, 42] ตัวไหนหารด้วย 7 ลงตัว
+เขียนโปรแกรมที่วนลูปถามชื่อเรื่อยๆ จนกว่าจะป้อน "exit"
+สร้างโปรแกรมพิมพ์ตัวเลขตั้งแต่ 1 ถึง 30 ถ้าเจอเลขที่หารด้วย 7 ลงตัว ให้พิมพ์ "BOOM"
+เขียนโปรแกรมพิมพ์ตัวเลขตั้งแต่ 1 ถึง 100 และนับจำนวนเลขคู่
+ใช้ for เช็คว่าตัวอักษรในคำว่า "banana" ตัวไหนเป็นตัว a
+ใช้ while พิมพ์ตัวเลขตั้งแต่ 1 ถึง 10 และหยุดทันทีที่ถึงเลข 5
+สร้างเกมสุ่มคำจาก ["cat", "dog", "fish"] และให้ผู้ใช้ทายจนกว่าจะถูก
+Challenge Questions
+สร้างเกมเดาเลข 1-100 โดยใช้ while และให้คำใบ้ว่า "มากกว่า" หรือ "น้อยกว่า"
+สร้างโปรแกรมที่ถามคะแนน 5 วิชา และคำนวณว่าได้เกรดอะไร (A-F)
+เขียนโปรแกรมที่รับตัวเลข 10 ตัว และพิมพ์เฉพาะตัวเลขที่มากกว่า 50
+สร้างเกมที่ให้ผู้ใช้เดาว่าเหรียญจะออกหัวหรือก้อยจนกว่าจะถูก 3 ครั้ง
+ใช้ for วนลูปคำในลิสต์ ["apple", "banana", "cherry"] และพิมพ์คำที่มีตัว a
+เขียนโปรแกรมที่ให้ผู้ใช้ป้อนตัวเลขไปเรื่อยๆ และพิมพ์ผลรวมเมื่อผู้ใช้พิมพ์ "รวม"
+ใช้ while สุ่มตัวเลข 1-20 และพิมพ์ "เจอเลข 10!" ถ้าเจอเลข 10
+สร้างโปรแกรมพิมพ์เลข 1 ถึง 100 ถ้าเจอเลขที่หารด้วย 15 ลงตัวให้พิมพ์ "FizzBuzz"
+ใช้ for และ if เช็คว่าตัวเลขในลิสต์ [12, 24, 35, 47, 60] ตัวไหนเป็นเลขคี่
+สร้างเกมที่ให้ผู้ใช้ตอบ "yes" หรือ "no" และจบเกมเมื่อผู้ใช้ตอบ "no"
+
+
+
+คำตอบ If-Else
+ตรวจเลขคู่หรือคี่:
+
+python
+Copy code
+number = int(input("ใส่ตัวเลข: "))
+if number % 2 == 0:
+    print("เลขคู่")
+else:
+    print("เลขคี่")
+ตรวจตัวเลขมากกว่าหรือน้อยกว่า 100:
+
+python
+Copy code
+number = int(input("ใส่ตัวเลข: "))
+if number > 100:
+    print("มากกว่า 100")
+else:
+    print("น้อยกว่าหรือเท่ากับ 100")
+บอกอายุ "เด็ก" หรือ "ผู้ใหญ่":
+
+python
+Copy code
+age = int(input("ใส่อายุ: "))
+if age < 18:
+    print("เด็ก")
+else:
+    print("ผู้ใหญ่")
+อุณหภูมิ "ร้อน" หรือ "เย็น":
+
+python
+Copy code
+temp = float(input("ใส่อุณหภูมิ (°C): "))
+if temp > 30:
+    print("ร้อน")
+else:
+    print("เย็น")
+ตรวจหารด้วย 5 ลงตัว:
+
+python
+Copy code
+number = int(input("ใส่ตัวเลข: "))
+if number % 5 == 0:
+    print("หารด้วย 5 ลงตัว")
+else:
+    print("หารด้วย 5 ไม่ลงตัว")
+เช็คชื่อ "สมชาย":
+
+python
+Copy code
+name = input("ใส่ชื่อ: ")
+if name == "สมชาย":
+    print("สวัสดี สมชาย!")
+คะแนนผ่าน/ไม่ผ่าน:
+
+python
+Copy code
+score = int(input("ใส่คะแนน: "))
+if score > 50:
+    print("ผ่าน")
+else:
+    print("ไม่ผ่าน")
+ตรวจว่าตัวเลขบวกกันได้ 100 หรือไม่:
+
+python
+Copy code
+a = int(input("ตัวเลขที่ 1: "))
+b = int(input("ตัวเลขที่ 2: "))
+if a + b == 100:
+    print("ตัวเลขบวกกันได้ 100")
+else:
+    print("ตัวเลขบวกกันไม่ได้ 100")
+เช็คตัวอักษรพิมพ์เล็ก/พิมพ์ใหญ่:
+
+python
+Copy code
+char = input("ใส่ตัวอักษร: ")
+if char.isupper():
+    print("ตัวพิมพ์ใหญ่")
+else:
+    print("ตัวพิมพ์เล็ก")
+วันหยุดหรือไม่:
+
+python
+Copy code
+day = input("ใส่วัน: ")
+if day in ["เสาร์", "อาทิตย์"]:
+    print("วันหยุด")
+else:
+    print("วันทำงาน")
+คำตอบ For Loop
+พิมพ์ตัวเลข 1 ถึง 10:
+
+python
+Copy code
+for i in range(1, 11):
+    print(i)
+พิมพ์ตัวเลขคู่ 1 ถึง 20:
+
+python
+Copy code
+for i in range(2, 21, 2):
+    print(i)
+พิมพ์ชื่อ 5 ครั้ง:
+
+python
+Copy code
+for _ in range(5):
+    print("ชื่อของคุณ")
+ผลรวม 1 ถึง 100:
+
+python
+Copy code
+total = sum(range(1, 101))
+print("ผลรวม:", total)
+แม่สูตรคูณ 7:
+
+python
+Copy code
+for i in range(1, 13):
+    print(f"7 x {i} = {7 * i}")
+พิมพ์เลขย้อนหลัง:
+
+python
+Copy code
+for i in range(10, 0, -1):
+    print(i)
+สามเหลี่ยมจาก *:
+
+python
+Copy code
+for i in range(1, 5):
+    print("*" * i)
+พิมพ์เลขหารด้วย 3 ลงตัว:
+
+python
+Copy code
+for i in range(1, 31):
+    if i % 3 == 0:
+        print(i)
+วนลูปตัวอักษรใน "PYTHON":
+
+python
+Copy code
+for char in "PYTHON":
+    print(char)
+ผลรวมเลขคู่ 1 ถึง 50:
+
+python
+Copy code
+total = sum(i for i in range(1, 51) if i % 2 == 0)
+print("ผลรวม:", total)
+คำตอบ While Loop
+พิมพ์ตัวเลข 1 ถึง 10:
+
+python
+Copy code
+i = 1
+while i <= 10:
+    print(i)
+    i += 1
+พิมพ์เลขหารด้วย 4 ลงตัว:
+
+python
+Copy code
+i = 1
+while i <= 40:
+    if i % 4 == 0:
+        print(i)
+    i += 1
+ถามอายุจนมากกว่า 18:
+
+python
+Copy code
+age = 0
+while age <= 18:
+    age = int(input("ใส่อายุ: "))
+print("อายุผ่าน")
+เกมทายเลข:
+
+python
+Copy code
+import random
+target = random.randint(1, 10)
+guess = 0
+while guess != target:
+    guess = int(input("ทายเลข (1-10): "))
+    if guess == target:
+        print("ถูกต้อง!")
+สามเหลี่ยมกลับหัว:
+
+python
+Copy code
+i = 4
+while i > 0:
+    print("*" * i)
+    i -= 1
+พิมพ์เลขคี่ 1 ถึง 20:
+
+python
+Copy code
+i = 1
+while i <= 20:
+    if i % 2 != 0:
+        print(i)
+    i += 1
+เลขอนุกรม:
+
+python
+Copy code
+i = 1
+while i <= 32:
+    print(i)
+    i *= 2
+หยุดเมื่อป้อนเลข 0:
+
+python
+Copy code
+number = 1
+while number != 0:
+    number = int(input("ใส่ตัวเลข (0 เพื่อหยุด): "))
+print("หยุดโปรแกรม")
+พิมพ์เลข 100 ถึง 90:
+
+python
+Copy code
+i = 100
+while i >= 90:
+    print(i)
+    i -= 1
+รวมตัวเลขจนพิมพ์ stop:
+
+python
+Copy code
+total = 0
+while True:
+    text = input("ใส่ตัวเลข (หรือพิมพ์ 'stop'): ")
+    if text == "stop":
+        break
+    total += int(text)
+print("ผลรวม:", total)
+
+หากต้องการ คำตอบที่เหลือ (31-50) หรือโค้ดเพิ่มเติม แจ้งมาได้เลยครับ!
+
+
+คำตอบ If + Loop Combined
+พิมพ์เลข 1 ถึง 50 พร้อมบอกเลขคู่:
+
+python
+Copy code
+for i in range(1, 51):
+    if i % 2 == 0:
+        print(f"{i} เป็นเลขคู่")
+
+นับคำว่า "hello" ในลิสต์:
+
+python
+Copy code
+words = ["hello", "world", "hello", "python"]
+count = 0
+for word in words:
+    if word == "hello":
+        count += 1
+print(f"คำว่า 'hello' มีทั้งหมด {count} ครั้ง")
+
+สุ่มเลข 1-100 จนกว่าจะหารด้วย 5 ลงตัว:
+
+python
+Copy code
+import random
+while True:
+    number = random.randint(1, 100)
+    print(f"สุ่มได้: {number}")
+    if number % 5 == 0:
+        print("เจอเลขที่หารด้วย 5 ลงตัวแล้ว!")
+        break
+
+เช็คเลขในลิสต์ที่หารด้วย 7 ลงตัว:
+
+python
+Copy code
+numbers = [2, 7, 18, 35, 42]
+for num in numbers:
+    if num % 7 == 0:
+        print(f"{num} หารด้วย 7 ลงตัว")
+
+วนลูปถามชื่อจนกว่าจะป้อน "exit":
+
+python
+Copy code
+while True:
+    name = input("ใส่ชื่อ (พิมพ์ 'exit' เพื่อหยุด): ")
+    if name == "exit":
+        break
+print("จบโปรแกรม")
+
+พิมพ์เลข 1 ถึง 30 และ "BOOM" เมื่อหารด้วย 7 ลงตัว:
+
+python
+Copy code
+for i in range(1, 31):
+    if i % 7 == 0:
+        print("BOOM")
+    else:
+        print(i)
+
+พิมพ์เลข 1 ถึง 100 และนับจำนวนเลขคู่:
+
+python
+Copy code
+count = 0
+for i in range(1, 101):
+    if i % 2 == 0:
+        count += 1
+print(f"มีเลขคู่ทั้งหมด {count} ตัว")
+
+เช็คตัว a ในคำว่า "banana":
+
+python
+Copy code
+word = "banana"
+for char in word:
+    if char == "a":
+        print("เจอตัว a")
+
+พิมพ์เลข 1 ถึง 10 และหยุดเมื่อถึง 5:
+
+python
+Copy code
+for i in range(1, 11):
+    if i == 5:
+        print("หยุดที่เลข 5")
+        break
+    print(i)
+
+เกมสุ่มคำและให้ผู้ใช้ทาย:
+
+python
+Copy code
+import random
+words = ["cat", "dog", "fish"]
+target = random.choice(words)
+while True:
+    guess = input("ทายคำ (cat, dog, fish): ")
+    if guess == target:
+        print("ทายถูกต้อง!")
+        break
+Challenge Answers
+
+เกมเดาเลข 1-100 พร้อมคำใบ้:
+
+python
+Copy code
+import random
+target = random.randint(1, 100)
+while True:
+    guess = int(input("ทายเลข (1-100): "))
+    if guess > target:
+        print("น้อยกว่า")
+    elif guess < target:
+        print("มากกว่า")
+    else:
+        print("ถูกต้อง!")
+        break
+
+คำนวณเกรด A-F:
+
+python
+Copy code
+scores = []
+for i in range(5):
+    score = int(input(f"คะแนนวิชาที่ {i + 1}: "))
+    scores.append(score)
+
+for score in scores:
+    if score >= 80:
+        print("A")
+    elif score >= 70:
+        print("B")
+    elif score >= 60:
+        print("C")
+    elif score >= 50:
+        print("D")
+    else:
+        print("F")
+
+ตัวเลขมากกว่า 50 จากลิสต์:
+
+python
+Copy code
+numbers = [int(input("ใส่ตัวเลข: ")) for _ in range(10)]
+for num in numbers:
+    if num > 50:
+        print(f"{num} มากกว่า 50")
+
+เกมทายเหรียญ (หัว/ก้อย):
+
+python
+Copy code
+import random
+correct = 0
+while correct < 3:
+    result = random.choice(["หัว", "ก้อย"])
+    guess = input("ทายผล (หัว/ก้อย): ")
+    if guess == result:
+        correct += 1
+        print(f"ถูกต้อง! (สะสม {correct} ครั้ง)")
+    else:
+        print("ผิด!")
+print("จบเกม")
+
+พิมพ์คำที่มีตัว a ในลิสต์:
+
+python
+Copy code
+words = ["apple", "banana", "cherry"]
+for word in words:
+    if "a" in word:
+        print(f"{word} มีตัว a")
+
+ผลรวมจนพิมพ์ "รวม":
+
+python
+Copy code
+total = 0
+while True:
+    text = input("ใส่ตัวเลข (หรือพิมพ์ 'รวม' เพื่อดูผลรวม): ")
+    if text == "รวม":
+        print("ผลรวม:", total)
+        break
+    total += int(text)
+
+สุ่มเลข 1-20 จนเจอ 10:
+
+python
+Copy code
+import random
+while True:
+    number = random.randint(1, 20)
+    print(f"สุ่มได้: {number}")
+    if number == 10:
+        print("เจอเลข 10!")
+        break
+FizzBuzz:
+
+python
+Copy code
+for i in range(1, 101):
+    if i % 15 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)
+
+เช็คเลขคี่ในลิสต์:
+
+python
+Copy code
+numbers = [12, 24, 35, 47, 60]
+for num in numbers:
+    if num % 2 != 0:
+        print(f"{num} เป็นเลขคี่")
+เกมตอบ "yes" หรือ "no":
+
+python
+Copy code
+while True:
+    answer = input("ตอบ 'yes' หรือ 'no': ").lower()
+    if answer == "no":
+        print("จบเกม")
+        break
