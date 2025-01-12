@@ -1,0 +1,15 @@
+def manage_scores():
+    students = {}
+    while True:
+        name = input("ชื่อนักเรียน (พิมพ์ 'end' เพื่อจบ): ")
+        if name == "end":
+            break
+        score = float(input(f"คะแนนของ {name}: "))
+        students[name] = score
+    
+    if students:
+        print(f"ค่าเฉลี่ย: {sum(students.values()) / len(students):.2f}")
+        print(f"คะแนนสูงสุด: {max(students.values())}")
+        print(f"คะแนนต่ำสุด: {min(students.values())}")
+
+manage_scores()
