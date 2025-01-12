@@ -1,0 +1,13 @@
+def text_analysis():
+    text = input("กรอกข้อความ: ")
+    letters = sum(c.isalpha() for c in text)
+    digits = sum(c.isdigit() for c in text)
+    spaces = sum(c.isspace() for c in text)
+    specials = len(text) - (letters + digits + spaces)
+    
+    print(f"ตัวอักษร: {letters}")
+    print(f"ตัวเลข: {digits}")
+    print(f"ช่องว่าง: {spaces}")
+    print(f"ตัวอักษรพิเศษ: {specials}")
+
+text_analysis()
