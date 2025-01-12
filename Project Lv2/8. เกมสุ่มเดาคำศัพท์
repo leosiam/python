@@ -1,0 +1,24 @@
+import random
+import time
+
+def typing_game():
+    words = ["python", "program", "developer", "debug", "function"]
+    random.shuffle(words)
+    score = 0
+    
+    for word in words:
+        print(f"พิมพ์คำว่า: {word}")
+        start = time.time()
+        typed = input("พิมพ์คำ: ")
+        end = time.time()
+        
+        if typed == word:
+            time_taken = end - start
+            print(f"ถูกต้อง! ใช้เวลา {time_taken:.2f} วินาที")
+            score += 1
+        else:
+            print("ผิด!")
+    
+    print(f"คะแนนรวม: {score}/{len(words)}")
+
+typing_game()
