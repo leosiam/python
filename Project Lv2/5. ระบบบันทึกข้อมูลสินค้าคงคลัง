@@ -1,0 +1,34 @@
+def inventory_system():
+    inventory = {}
+    
+    while True:
+        print("\n1. เพิ่มสินค้า")
+        print("2. ลบสินค้า")
+        print("3. แสดงสินค้า")
+        print("4. ออกจากโปรแกรม")
+        choice = input("เลือกคำสั่ง: ")
+        
+        if choice == "1":
+            item = input("ชื่อสินค้า: ")
+            quantity = int(input(f"จำนวนของ {item}: "))
+            inventory[item] = inventory.get(item, 0) + quantity
+        elif choice == "2":
+            item = input("ชื่อสินค้าที่ต้องการลบ: ")
+            if item in inventory:
+                del inventory[item]
+                print(f"ลบ {item} แล้ว")
+            else:
+                print("ไม่มีสินค้านี้ในคลัง")
+        elif choice == "3":
+            if inventory:
+                for item, quantity in inventory.items():
+                    print(f"{item}: {quantity}")
+            else:
+                print("คลังว่างเปล่า")
+        elif choice == "4":
+            print("ออกจากโปรแกรม")
+            break
+        else:
+            print("คำสั่งไม่ถูกต้อง")
+
+inventory_system()
