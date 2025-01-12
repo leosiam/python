@@ -1,0 +1,166 @@
+โจทย์และเฉลย Python สำหรับเด็ก
+1. แปลงเวลาจากชั่วโมงเป็นวินาที
+โจทย์: เขียนโปรแกรมรับจำนวนชั่วโมง แล้วแปลงเป็นวินาที
+เฉลย:
+
+python
+Copy code
+hours = int(input("กรอกจำนวนชั่วโมง: "))
+seconds = hours * 60 * 60
+print(f"{hours} ชั่วโมง = {seconds} วินาที")
+2. คำนวณพื้นที่สี่เหลี่ยมผืนผ้า
+โจทย์: รับค่าความยาวและความกว้าง แล้วหาพื้นที่
+เฉลย:
+
+python
+Copy code
+length = float(input("ความยาว: "))
+width = float(input("ความกว้าง: "))
+area = length * width
+print(f"พื้นที่สี่เหลี่ยมผืนผ้าคือ {area}")
+3. ตรวจสอบจำนวนบวกหรือลบ
+โจทย์: รับตัวเลข แล้วบอกว่าตัวเลขเป็นบวก, ลบ หรือศูนย์
+เฉลย:
+
+python
+Copy code
+num = int(input("กรอกตัวเลข: "))
+if num > 0:
+    print("บวก")
+elif num < 0:
+    print("ลบ")
+else:
+    print("ศูนย์")
+4. คำนวณค่าเฉลี่ยของตัวเลข 3 ตัว
+โจทย์: รับตัวเลข 3 ตัว แล้วคำนวณค่าเฉลี่ย
+เฉลย:
+
+python
+Copy code
+a = float(input("ตัวเลขที่ 1: "))
+b = float(input("ตัวเลขที่ 2: "))
+c = float(input("ตัวเลขที่ 3: "))
+average = (a + b + c) / 3
+print(f"ค่าเฉลี่ยคือ {average:.2f}")
+5. หาเลขคู่จาก 1 ถึง 20
+โจทย์: แสดงเลขคู่ทั้งหมดจาก 1 ถึง 20
+เฉลย:
+
+python
+Copy code
+for i in range(1, 21):
+    if i % 2 == 0:
+        print(i, end=" ")
+6. คำนวณเลขยกกำลัง
+โจทย์: รับเลขฐานและเลขยกกำลัง แล้วคำนวณผลลัพธ์
+เฉลย:
+
+python
+Copy code
+base = int(input("ฐาน: "))
+exp = int(input("ยกกำลัง: "))
+result = base ** exp
+print(f"{base} ยกกำลัง {exp} = {result}")
+7. ตารางสูตรคูณแม่ 5
+โจทย์: แสดงตารางสูตรคูณแม่ 5
+เฉลย:
+
+python
+Copy code
+for i in range(1, 13):
+    print(f"5 x {i} = {5 * i}")
+8. เช็คตัวเลขเป็นเลขเฉพาะ
+โจทย์: เขียนโปรแกรมตรวจสอบว่าตัวเลขที่ผู้ใช้กรอกเป็นเลขเฉพาะหรือไม่
+เฉลย:
+
+python
+Copy code
+num = int(input("กรอกตัวเลข: "))
+if num > 1:
+    for i in range(2, num):
+        if num % i == 0:
+            print(f"{num} ไม่ใช่เลขเฉพาะ")
+            break
+    else:
+        print(f"{num} เป็นเลขเฉพาะ")
+else:
+    print(f"{num} ไม่ใช่เลขเฉพาะ")
+9. หาผลรวมของตัวเลขในลิสต์
+โจทย์: ให้ลิสต์ [1, 2, 3, 4, 5] หาผลรวมของตัวเลขในลิสต์
+เฉลย:
+
+python
+Copy code
+nums = [1, 2, 3, 4, 5]
+total = sum(nums)
+print(f"ผลรวมคือ {total}")
+10. แสดงตัวเลขย้อนกลับ
+โจทย์: รับตัวเลข แล้วแสดงเลขย้อนกลับ เช่น 123 → 321
+เฉลย:
+
+python
+Copy code
+num = input("กรอกตัวเลข: ")
+print("ย้อนกลับ:", num[::-1])
+11. สุ่มตัวเลขแล้วทาย
+โจทย์: สุ่มตัวเลขระหว่าง 1-100 แล้วให้ผู้ใช้ทายจนกว่าจะถูก
+เฉลย:
+
+python
+Copy code
+import random
+answer = random.randint(1, 100)
+while True:
+    guess = int(input("ทายเลข (1-100): "))
+    if guess == answer:
+        print("ถูกต้อง!")
+        break
+    elif guess < answer:
+        print("มากกว่านี้")
+    else:
+        print("น้อยกว่านี้")
+12. เกมนับถอยหลัง
+โจทย์: ใช้ลูปแสดงเลขถอยหลังจาก 10 ถึง 1 แล้วพิมพ์ "จบ!"
+เฉลย:
+
+python
+Copy code
+for i in range(10, 0, -1):
+    print(i)
+print("จบ!")
+13. เช็คคำว่ากลับคำ
+โจทย์: รับข้อความ แล้วตรวจสอบว่าเป็นคำกลับคำ (Palindrome) หรือไม่
+เฉลย:
+
+python
+Copy code
+text = input("กรอกข้อความ: ")
+if text == text[::-1]:
+    print("เป็นคำกลับคำ")
+else:
+    print("ไม่ใช่คำกลับคำ")
+14. คำนวณค่าทศนิยม
+โจทย์: แสดงค่าทศนิยม 2 ตำแหน่งของผลหารระหว่าง 5 และ 3
+เฉลย:
+
+python
+Copy code
+result = 5 / 3
+print(f"ผลลัพธ์คือ {result:.2f}")
+15. แปลงคะแนนเป็นเกรด
+โจทย์: รับคะแนน (0-100) แล้วแปลงเป็นเกรด (A, B, C, D, F)
+เฉลย:
+
+python
+Copy code
+score = int(input("กรอกคะแนน: "))
+if score >= 80:
+    print("เกรด A")
+elif score >= 70:
+    print("เกรด B")
+elif score >= 60:
+    print("เกรด C")
+elif score >= 50:
+    print("เกรด D")
+else:
+    print("เกรด F")
