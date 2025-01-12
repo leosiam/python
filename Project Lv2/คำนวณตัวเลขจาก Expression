@@ -1,0 +1,19 @@
+def calculate_expression():
+    expression = input("กรอกสมการ (เช่น 2 + 3 * 4): ")
+    try:
+        result = eval(expression)
+        print(f"ผลลัพธ์คือ: {result}")
+    except Exception as e:
+        print(f"ข้อผิดพลาด: {e}")
+
+calculate_expression()
+
+def list_manager():
+    nums = [int(x) for x in input("กรอกตัวเลขคั่นด้วยช่องว่าง: ").split()]
+    print(f"ค่ามากที่สุด: {max(nums)}")
+    print(f"ค่าน้อยที่สุด: {min(nums)}")
+    print(f"เรียงจากน้อยไปมาก: {sorted(nums)}")
+    print(f"เรียงจากมากไปน้อย: {sorted(nums, reverse=True)}")
+
+list_manager()
+
