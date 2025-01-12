@@ -1,0 +1,13 @@
+def currency_converter():
+    rates = {"USD": 35.0, "EUR": 38.0, "JPY": 0.25}
+    amount = float(input("กรอกจำนวนเงิน (THB): "))
+    print("สกุลเงินที่สามารถแปลงได้: USD, EUR, JPY")
+    currency = input("เลือกสกุลเงิน: ").upper()
+    
+    if currency in rates:
+        converted = amount / rates[currency]
+        print(f"{amount} THB = {converted:.2f} {currency}")
+    else:
+        print("ไม่รองรับสกุลเงินนี้")
+
+currency_converter()
